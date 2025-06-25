@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -153,5 +154,15 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'poppins', sans-serif;
   }
+}
+
+/* Custom 3D perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
 }

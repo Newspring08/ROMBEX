@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,31 +30,33 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled
+          ? "bg-background backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
-      <nav className="lg:px-64 mx-auto lg:h-24 lg:py-3 lg:gap-6 p-6 py-4 ">
+      <nav className="lg:px-64 mx-auto lg:h-24 lg:py-8 lg:gap-6 p-6 py-6 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-emerald-500 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-lg">U</span>
-            </div>
-            <span className="text-emerald-500 text-xl font-semibold">
-              upgrade
-            </span>
+            <Image
+              src="/upgrade-inc-logo-.png"
+              alt="Upgrade Logo"
+              width={100}
+              height={100}
+            />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-gray-100 hover:text-emerald-500 transition-colors font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -72,9 +76,9 @@ export function Header() {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-800" />
+                <X className="h-6 w-6 text-gray-100" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-800" />
+                <Menu className="h-6 w-6 text-gray-100" />
               )}
             </button>
           </div>
@@ -101,7 +105,7 @@ export function Header() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-800 hover:text-emerald-500 transition-colors font-medium"
+                    className="text-gray-100 hover:text-emerald-500 transition-colors font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

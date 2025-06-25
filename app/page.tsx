@@ -1,12 +1,37 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Header } from "./components/nav";
 import { motion } from "framer-motion";
+import MarqueeSlider from "./components/marquee";
+import Lenis from "@studio-freight/lenis";
 
 export default function HomePage() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // ✅ Initialize Lenis
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // custom easing
+      smooth: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   // Animation variants
   const fadeSlide = {
     hidden: { opacity: 0, x: -100 },
@@ -19,7 +44,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div ref={scrollContainerRef} className="min-h-screen">
       <Header />
 
       {/* Main Content with Background Pattern */}
@@ -32,9 +57,8 @@ export default function HomePage() {
           backgroundPosition: "center",
         }}
       >
-        {/* Content Container */}
-        <div className="relative z-10 px-4 py-16 lg:py-24">
-          <div className=" lg:max-w-6xl px-6  mx-auto grid lg:grid-cols-2  items-center justify-self-start">
+        <div className="relative z-10 px-4 py-24 lg:py-24">
+          <div className="container max-w-7xl px-6 mx-auto grid lg:grid-cols-2 mt-14 items-center justify-self-start">
             {/* Left Column - Text Content */}
             <motion.div
               className="space-y-8"
@@ -42,7 +66,6 @@ export default function HomePage() {
               animate="show"
               transition={{ staggerChildren: 0.2 }}
             >
-              {/* Trust Badge */}
               <motion.div
                 variants={scaleFade}
                 transition={{ duration: 2, ease: "easeOut" }}
@@ -54,7 +77,6 @@ export default function HomePage() {
                 </span>
               </motion.div>
 
-              {/* Hero Heading */}
               <motion.div
                 variants={fadeSlide}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -69,7 +91,6 @@ export default function HomePage() {
                 </h1>
               </motion.div>
 
-              {/* Subheading */}
               <motion.div
                 variants={fadeSlide}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -84,21 +105,21 @@ export default function HomePage() {
                 </p>
               </motion.div>
 
-              {/* CTA Button */}
               <motion.div
                 variants={scaleFade}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <Button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg rounded-md group">
+                <Button className="bg-emerald-500 hover:bg-white hover:text-emerald-500 cursor-pointer text-white px-8 py-6 text-lg rounded-md group">
                   Open Account
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </motion.div>
             </motion.div>
+
             {/* Right Column - Hero Image */}
-            <div className="relative flex justify-center lg:justify-end">
+            <div className="relative flex justify-center lg:justify-end mt-12">
               <motion.div
-                className="relative w-full max-w-lg"
+                className="relative w-full max-w-xl"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -108,7 +129,7 @@ export default function HomePage() {
                   alt="Upgrade mobile banking app interface showing account balance and credit cards"
                   width={1000}
                   height={600}
-                  className="w-full h-auto mt-12"
+                  className="w-full h-auto"
                   priority
                 />
               </motion.div>
@@ -116,6 +137,8 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      <MarqueeSlider />
     </div>
   );
 }
