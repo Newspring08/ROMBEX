@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export function Trust() {
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 60 },
     show: {
       opacity: 1,
@@ -15,7 +15,7 @@ export function Trust() {
     },
   };
 
-  const fadeLeft = {
+  const fadeLeft: Variants = {
     hidden: { opacity: 0, x: -60 },
     show: {
       opacity: 1,
@@ -24,7 +24,7 @@ export function Trust() {
     },
   };
 
-  const fadeRight = {
+  const fadeRight: Variants = {
     hidden: { opacity: 0, x: 60 },
     show: {
       opacity: 1,
