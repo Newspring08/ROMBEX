@@ -15,34 +15,35 @@ const countries = [
   {
     id: 1,
     name: "Nigeria",
-    image:
-      "/toolip-image/nigeria.jpeg",
+    image: "/toolip-image/nigeria.jpeg",
+    designation: "West Africa",
   },
   {
     id: 2,
     name: "Ghana",
-    image:
-      "/toolip-image/ghana.jpeg",
+    image: "/toolip-image/ghana.jpeg",
+    designation: "West Africa",
   },
   {
     id: 3,
     name: "Kenya",
-    image:
-      "/toolip-image/kenya.jpeg",
+    image: "/toolip-image/kenya.jpeg",
+    designation: "East Africa",
   },
   {
     id: 4,
     name: "South Africa",
-    image:
-      "/toolip-image/south.jpeg",
+    image: "/toolip-image/south.jpeg",
+    designation: "Southern Africa",
   },
   {
     id: 5,
     name: "Canada",
-    image:
-      "/toolip-image/canada.jpeg",
+    image: "/toolip-image/canada.jpeg",
+    designation: "North America",
   },
 ];
+
 
 export default function HomePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
