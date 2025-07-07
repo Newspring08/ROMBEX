@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Nigeria" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[2.6917, 6.2588], [3.6806, 6.2588], [3.6806, 7.4623], [2.6917, 7.4623], [2.6917, 6.2588]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Ghana" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-1.9647, 5.1130], [-0.9017, 5.1130], [-0.9017, 6.1390], [-1.9647, 6.1390], [-1.9647, 5.1130]]]
+      }
+    }
+  ]
+}
+    

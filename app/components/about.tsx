@@ -57,12 +57,10 @@ export function About() {
     },
   ];
 
-  // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slideData.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [slideData.length]);
 
@@ -84,13 +82,13 @@ export function About() {
   return (
     <section className="py-16 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center min-h-[100%]">
-          {/* Left Side - Dynamic Content */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          {/* Left Side */}
           <div className="flex justify-end lg:mt-12">
-            <Card className="w-full h-[500px] bg-white shadow-lg transition-all duration-500">
-              <CardContent className=" h-full">
+            <Card className="w-full h-full bg-white shadow-md transition-all duration-500 rounded-2xl">
+              <CardContent className="p-0 h-full">
                 <div
-                  className={`bg-gradient-to-br ${currentSlide.leftContent.color} rounded-2xl p-6 text-white h-full flex flex-col justify-between transition-all duration-500`}
+                  className={`bg-gradient-to-br ${currentSlide.leftContent.color} rounded-2xl p-6 lg:p-8 text-white h-full flex flex-col justify-between`}
                 >
                   <div className="mb-6">
                     <div className="flex items-center space-x-2 mb-2">
@@ -106,13 +104,11 @@ export function About() {
                       {currentSlide.leftContent.subtitle}
                     </div>
                   </div>
-
-                  {/* Dynamic Chart */}
-                  <div className="relative h-96">
+                  <div className="relative h-auto">
                     <img
                       src={currentSlide.leftContent.image || "/placeholder.svg"}
                       alt={currentSlide.leftContent.imageAlt}
-                      className="w-full h-94 object-cover rounded-lg transition-all duration-500"
+                      className="w-full h-48 sm:h-64 lg:h-72 object-cover rounded-lg transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
                   </div>
@@ -121,9 +117,8 @@ export function About() {
             </Card>
           </div>
 
-          {/* Right Side - Slideshow Content */}
+          {/* Right Side */}
           <div className="space-y-8 h-full flex flex-col justify-center">
-            {/* Header */}
             <div className="space-y-4">
               <motion.div
                 variants={scaleFade}
@@ -135,16 +130,15 @@ export function About() {
                   ABOUT UPGRADE
                 </span>
               </motion.div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 ALL YOUR MONEY
                 <br />
                 NEEDS IN ONE APP
               </h2>
             </div>
 
-            {/* Slideshow Content */}
+            {/* Slide Options */}
             <div className="relative">
-              {/* Slides */}
               <div className="space-y-4">
                 {slideData.map((slide, index) => (
                   <div
@@ -155,17 +149,17 @@ export function About() {
                     onClick={() => setActiveSlide(index)}
                   >
                     <Card
-                      className={`${
+                      className={`$${
                         index === activeSlide
                           ? "border-l-4 border-l-emerald-500 bg-emerald-50 shadow-lg"
                           : "border border-gray-200 bg-white hover:shadow-md"
-                      } transition-all duration-300`}
+                      } transition-all duration-300 rounded-xl`}
                     >
                       <CardContent className="p-6">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
                           {slide.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 text-sm">
                           {slide.description}
                         </p>
                       </CardContent>

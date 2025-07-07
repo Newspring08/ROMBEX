@@ -40,7 +40,7 @@ export const AnimatedTestimonials = ({
   const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
 
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, threshold: 0.2 });
+  const isInView = useInView(sectionRef, { once: true });
 
   return (
     <motion.div

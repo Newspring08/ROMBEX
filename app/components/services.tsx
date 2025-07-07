@@ -51,7 +51,7 @@ export function Services() {
               SERVICES
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl lg:font-medium xl:text-6xl font-bold text-gray-900 leading-tight">
             CAN HELP YOU ACHIEVE
             <br />
             FINANCIAL SUCCESS

@@ -29,93 +29,101 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full text-xs z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background backdrop-blur-md shadow-md"
-          : "bg-transparent"
+          ? "bg-white backdrop-blur-md text-gray-900"
+          : "bg-transparent text-gray-800 text-xs"
       }`}
     >
-      <nav className="lg:px-64 mx-auto lg:h-24 lg:py-8 lg:gap-6 p-6 py-6 ">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Image
-              src="/upgrade-inc-logo-.png"
-              alt="Upgrade Logo"
-              width={100}
-              height={100}
-            />
-          </div>
+      <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <nav className="py-4 lg:py-5 w-full">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <Image
+                src="/r-logo.png"
+                alt="Upgrade Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+              <span className="text-lg sm:text-xl lg:text-2xl font-bold">
+                ROMBEX
+              </span>
+            </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-100 hover:text-emerald-500 transition-colors font-medium"
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-6">
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm font-medium hover:text-primary transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Sign In Button & Mobile Menu Toggle */}
+            <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
+              <Button
+                variant="outline"
+                className="px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-4 text-xs sm:text-sm lg:text-sm text-white bg-black border-black hover:bg-black/90 hover:text-white rounded-md transition duration-300"
               >
-                {item.name}
-              </Link>
-            ))}
+                Sign In
+              </Button>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                className="block lg:hidden p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
+            </div>
           </div>
 
-          {/* Sign In Button & Mobile Menu Toggle */}
-          <div className="flex items-center space-x-4">
-            <Button
-              variant="outline"
-              className="border-emerald-500 lg:px-10 lg:py-5 text-emerald-500 hover:bg-emerald-500 hover:text-white"
-            >
-              Sign In
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-100" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-100" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden mt-4 pb-4 border-t border-gray-100 overflow-hidden"
-            >
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
               <motion.div
-                className="flex flex-col space-y-4 pt-4"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="block lg:hidden w-full overflow-hidden"
               >
-                {navigationItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-100 hover:text-emerald-500 transition-colors font-medium"
-                    onClick={() => setIsMenuOpen(false)}
+                <div className="border-t border-gray-100 pt-4">
+                  <motion.div
+                    className="flex flex-col space-y-4"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    {item.name}
-                  </a>
-                ))}
+                    {navigationItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-sm font-medium hover:text-primary transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                </div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+            )}
+          </AnimatePresence>
+        </nav>
+      </div>
     </header>
   );
 }

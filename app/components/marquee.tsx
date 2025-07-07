@@ -1,37 +1,39 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  FaPaypal,
+  FaAmazonPay,
+  FaCcVisa,
+  FaCcMastercard,
+  FaApplePay,
+  FaGooglePay,
+} from "react-icons/fa";
 
-const logos = [
-  { src: "/alipay.png", alt: "Alipay" },
-  { src: "/paypal.png", alt: "Paypal" },
-  { src: "/amazon.png", alt: "Amazon Pay" },
-  { src: "/samsung.png", alt: "samsung Pay" },
-  { src: "/spherule.png", alt: "spherule Pay" },
-  { src: "/visa.png", alt: "visa Pay" },
+const icons = [
+  { icon: FaPaypal, name: "PayPal" },
+  { icon: FaAmazonPay, name: "Amazon Pay" },
+  { icon: FaCcVisa, name: "Visa" },
+  { icon: FaCcMastercard, name: "MasterCard" },
+  { icon: FaApplePay, name: "Apple Pay" },
+  { icon: FaGooglePay, name: "Google Pay" },
 ];
 
 export default function MarqueeSlider() {
   return (
-    <div className="overflow-hidden bg-emerald-700 py-8">
+    <div className="overflow-hidden bg-whitw py-8 px-10">
       <motion.div
-        className="flex space-x-12 animate-marquee"
-        initial={{ x: "100%" }}
-        animate={{ x: "-100%" }}
-        transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
+        className="flex space-x-12 justify-center items-center"
+       
       >
-        {logos.concat(logos).map((logo, index) => (
-          <div key={index} className="flex-shrink-0 gap-1.5">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={100}
-              height={40}
-              className="opacity-70 hover:opacity-100 transition"
-            />
-          </div>
-        ))}
+        {icons.concat(icons).map((entry, index) => {
+          const Icon = entry.icon;
+          return (
+            <div key={index} className="flex-shrink-0">
+              <Icon className="text-black text-4xl hover:opacity-100 transition" />
+            </div>
+          );
+        })}
       </motion.div>
     </div>
   );
