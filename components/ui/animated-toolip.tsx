@@ -73,7 +73,7 @@ export const AnimatedTooltip = ({
                 <div className="relative z-30 text-base font-bold text-white">
                   {item.name}
                 </div>
-                <div className="text-xs text-white">{item.designation}</div>
+                <div className="text-xs text-white"></div>
               </motion.div>
             )}
           </AnimatePresence>
