@@ -1,7 +1,9 @@
+// app/layout.tsx
+
 import type { Metadata } from "next";
 import "./globals.css";
 import { About } from "./components/about";
-import { Poppins } from 'next/font/google';
+import { Poppins } from "next/font/google";
 import { Features } from "./components/wobble-card";
 import { Trust } from "./components/trust";
 import { Testimonials } from "./components/testimonials";
@@ -13,28 +15,18 @@ import { FeaturesSection } from "./components/rombex-service";
 import Contact from "./components/contact";
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // customize weights you need
-  variable: '--font-poppins', // optional but recommended
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
- export const metadata  = {
+export const metadata: Metadata = {
   title: "Rombex",
-  icons: {
-    icon: "/logo.ico"
- },
-  keywords: [
-    "upgrade",
-    "nextjs",
-    "react",
-    "typescript",
-    "ui",
-    "components",
-    "design system",
-    "tailwindcss",
-    "geist",
-  ],
   description: "A free banking app for transactions, savings, and loans.",
+  keywords: ["Rombex Financial Services"],
+  icons: {
+    icon: "/logo.ico", // fallback if head.tsx is removed
+  },
 };
 
 export default function RootLayout({
@@ -44,11 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-      <body
-        className={`${poppins.variable} ${poppins.variable} antialiased`}
-      >
-        <LenisProvider/>
+      <body className={`${poppins.variable} antialiased`}>
+        <LenisProvider />
         {children}
         <Globe />
         <Features />
