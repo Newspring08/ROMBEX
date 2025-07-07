@@ -34,7 +34,7 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <section className="relative py-20 bg-white">
+    <section className="relative py-20 mt-10 bg-white">
       {/* Lines Pattern */}
       <div className="absolute -top-12 w-screen left-1/2 -translate-x-1/2 max-lg:hidden">
         <svg
@@ -191,7 +191,7 @@ export default function Blog() {
                 <div className="pt-4">
                   <Button
                     size="lg"
-                    className="bg-white border-2 border-gray-200 text-gray-600 px-4 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-sm font-medium rounded-lg group transition-all duration-200"
+                    className="bg-white border-2 border-gray-200 text-gray-600 px-4 py-2 hover:scale-105 hover:bg-white sm:py-3 md:py-4 text-sm sm:text-base md:text-sm font-medium rounded-lg group transition-all duration-200"
                   >
                     Read More
                     <CornerDownRight className="ml-1 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />

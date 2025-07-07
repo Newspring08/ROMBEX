@@ -1,129 +1,99 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  NavbarLogo,
+  NavbarButton,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "@/components/ui/resizable-navbar";
+import { useState } from "react";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const navigationItems = [
-    { name: "Personal Loan", href: "#" },
-    { name: "One Card", href: "#" },
-    { name: "Savings", href: "#" },
-    { name: "Checking", href: "#" },
-    { name: "Help", href: "#" },
+  const navItems = [
+    {
+      name: "Home",
+      link: "#home",
+    },
+    {
+      name: "About",
+      link: "#about",
+    },
+    {
+      name: "Services",
+      link: "#services",
+    },
+    {
+      name: "Rates",
+      link: "#rates",
+    },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full text-xs z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white backdrop-blur-md text-gray-900"
-          : "bg-transparent text-gray-800 text-xs"
-      }`}
-    >
-      <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <nav className="py-4 lg:py-5 w-full">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-              <Image
-                src="/r-logo.png"
-                alt="Upgrade Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-              />
-              <span className="text-lg sm:text-xl lg:text-2xl font-bold">
-                ROMBEX
-              </span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-medium hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            {/* Sign In Button & Mobile Menu Toggle */}
-            <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
-              <Button
-                variant="outline"
-                className="px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-4 text-xs sm:text-sm lg:text-sm text-white bg-black border-black hover:bg-black/90 hover:text-white rounded-md transition duration-300"
-              >
-                Sign In
-              </Button>
-
-              {/* Mobile Menu Toggle */}
-              <button
-                className="block lg:hidden p-2"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
+    <div className="relative w-full">
+      <Navbar className="flex items-center justify-center">
+        {/* Desktop Navigation */}
+        <NavBody className="bg-white lg:bg-white/90">
+          <NavbarLogo />
+          <NavItems items={navItems} />
+          <div className="flex items-center gap-4">
+            <NavbarButton variant="secondary">Sign in</NavbarButton>
+            <NavbarButton variant="primary" className="lg:px-5 lg:py-2 text-white  bg-gradient-to-r from-gray-400 via-gray-900 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
+              Download
+            </NavbarButton>
           </div>
+        </NavBody>
 
-          {/* Mobile Menu */}
-          <AnimatePresence>
-            {isMenuOpen && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="block lg:hidden w-full overflow-hidden"
+        {/* Mobile Navigation */}
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </MobileNavHeader>
+
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
+            {navItems.map((item, idx) => (
+              <a
+                key={`mobile-link-${idx}`}
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="relative text-neutral-600 dark:text-neutral-300"
               >
-                <div className="border-t border-gray-100 pt-4">
-                  <motion.div
-                    className="flex flex-col space-y-4"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {navigationItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-sm font-medium hover:text-primary transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </nav>
-      </div>
-    </header>
+                <span className="block">{item.name}</span>
+              </a>
+            ))}
+            <div className="flex w-full flex-col gap-4">
+              <NavbarButton
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
+                Sign in
+              </NavbarButton>
+              <NavbarButton
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full bg-gradient-to-r from-gray-500 via-gray-900 to-black text-white"
+              >
+               Download
+              </NavbarButton>
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+
+      {/* Navbar */}
+    </div>
   );
 }

@@ -86,7 +86,7 @@ export default function HomePage() {
       <main className="">
         <div className="relative z-10 px-4 py-10">
           {/* Lines Pattern */}
-          <div className="absolute -top-12 w-screen left-1/2 -translate-x-1/2 max-lg:hidden">
+          <div className="absolute -top-12 w-screen overflow-x-hidden left-1/2 -translate-x-1/2 max-lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 270"
@@ -222,11 +222,11 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="flex space-x-4 mt-6"
               >
-                <Button className="lg:px-10 lg:py-5 text-white bg-black hover:text-white hover:bg-gray-800 hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
+                <Button className="lg:px-5 lg:py-2 text-white  bg-gradient-to-r from-gray-400 via-gray-900 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
                   Download
                   <FaDownload className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button className="bg-white border lg:px-10 lg:py-5 border-black cursor-pointer hover:scale-3d text-black hover:scale-105 text-sm rounded-md group">
+                <Button className="bg-white border lg:px-5 lg:py-2 border-black cursor-pointer hover:scale-105 text-black hover:bg-white text-sm rounded-md group">
                   <FaPlay className="ml-2 h-5 w-5 group-hover:translate-x-1 text-black transition-transform" />
                   View Demo
                 </Button>

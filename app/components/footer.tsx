@@ -11,9 +11,11 @@ const footerLinks = {
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
-  talent: [
-    { label: "Apply now", href: "/apply" },
-    { label: "Interview Prep", href: "/interview-prep" },
+  Services: [
+    { label: "Transfer", href: "/apply" },
+    { label: "Collections", href: "/interview-prep" },
+    { label: "Payments", href: "/payments" },
+    { label: "Loans", href: "/loans" },
   ],
   resources: [
     { label: "Integration", href: "/integration" },

@@ -23,7 +23,7 @@ export function Features() {
             transfers faster with auto-deposit and enhanced security.
           </p>
 
-          <Button className="lg:px-5 lg:py-5 text-white bg-gradient-to-r from-gray-400 via-gray-800 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
+          <Button className="lg:px-5 lg:py-5 text-white bg-gradient-to-r from-gray-500 via-gray-800 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
             Send Money Now
             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
               <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-white group-hover:translate-x-0.5 transition-transform" />
@@ -47,7 +47,7 @@ export function Features() {
           institutions. Send funds directly to 5,000+ banks across North America
           with next business day settlement.
         </p>
-        <Button className="lg:px-5 lg:py-5 text-white  bg-gradient-to-r from-gray-400 via-gray-800 to-black hover:text-white mt-5 hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
+        <Button className="lg:px-5 lg:py-5 text-white  bg-gradient-to-r from-gray-500 via-gray-800 to-black hover:text-white mt-5 hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
           Learn More
           <div className=" w-6 h-6 sm:w-8 sm:h-8 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
             <FaLink className="h-3 w-3 sm:h-4 sm:w-4 text-white group-hover:translate-x-0.5 transition-transform" />
@@ -64,7 +64,7 @@ export function Features() {
             matching technology. Save up to 3% compared to traditional banks
             when sending money internationally.
           </p>
-          <Button className="lg:px-5 lg:py-5 text-white  bg-gradient-to-r from-gray-400 via-gray-900 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
+          <Button className="lg:px-5 lg:py-5 text-white  bg-gradient-to-r from-gray-500 via-gray-900 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
             Learn More
             <div className=" w-6 h-6 sm:w-8 sm:h-8 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
               <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-white group-hover:translate-x-0.5 transition-transform" />

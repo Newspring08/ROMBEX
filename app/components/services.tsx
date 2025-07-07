@@ -44,17 +44,14 @@ export function Services() {
     <section ref={sectionRef} className="py-16 lg:py-24 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-2 mb-6">
-            <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-orange-500"></div>
-            <span className="text-orange-500 font-semibold text-sm tracking-wide uppercase">
-              SERVICES
+        <div className="text-center">
+          <div className="flex items-center justify-center space-x-2 mb-2">
+            <span className=" font-semibold text-2xl lg:text-4xl tracking-wide uppercase">
+            Rombex Services
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl lg:font-medium xl:text-6xl font-bold text-gray-900 leading-tight">
-            CAN HELP YOU ACHIEVE
-            <br />
-            FINANCIAL SUCCESS
+          <h2 className="text-xs lg:text-sm lg:font-medium font-bold text-gray-900 leading-tight">
+          Take advantage of the exchange rates we offer.
           </h2>
         </div>
 

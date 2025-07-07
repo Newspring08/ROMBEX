@@ -4,12 +4,13 @@ import { About } from "./components/about";
 import { Poppins } from 'next/font/google';
 import { Features } from "./components/wobble-card";
 import { Trust } from "./components/trust";
-import { Services } from "./components/services";
 import { Testimonials } from "./components/testimonials";
 import { LenisProvider } from "./components/lenisProvider";
 import { Globe } from "./components/globe";
 import Footer from "./components/footer";
 import Blog from "./components/blog";
+import { FeaturesSection } from "./components/rombex-service";
+import Contact from "./components/contact";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,7 +19,7 @@ const poppins = Poppins({
 });
 
  export const metadata  = {
-  title: "Upgrade",
+  title: "Rombex",
   icons: {
     icon: "/logo.ico"
  },
@@ -51,9 +52,9 @@ export default function RootLayout({
         {children}
         <Globe />
         <Features />
-        <Trust />
-        <Services/>
+        <FeaturesSection />
         <Blog />
+        <Contact />
         <Footer />
       </body>
     </html>
