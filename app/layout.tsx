@@ -13,6 +13,7 @@ import Footer from "./components/footer";
 import Blog from "./components/blog";
 import { FeaturesSection } from "./components/rombex-service";
 import Contact from "./components/contact";
+import { Header } from "./components/nav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,12 +39,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
         <LenisProvider />
+        <Header/>
         {children}
-        <Globe />
-        <Features />
-        <FeaturesSection />
-        <Blog />
-        <Contact />
         <Footer />
       </body>
     </html>

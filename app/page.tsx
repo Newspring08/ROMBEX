@@ -10,6 +10,11 @@ import MarqueeSlider from "./components/marquee";
 import Lenis from "@studio-freight/lenis";
 import { FaDownload, FaPlay } from "react-icons/fa6";
 import { AnimatedTooltip } from "@/components/ui/animated-toolip";
+import { Globe } from "./components/globe";
+import { Features } from "./components/wobble-card";
+import { FeaturesSection } from "./components/rombex-service";
+import Blog from "./components/blog";
+import Contact from "./components/contact";
 
 const countries = [
   {
@@ -43,7 +48,6 @@ const countries = [
     designation: "North America",
   },
 ];
-
 
 export default function HomePage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -233,7 +237,7 @@ export default function HomePage() {
               </motion.div>
 
               <div className="flex flex-row items-center justify-start lg:mt-6 mb-10 w-full">
-                <AnimatedTooltip items={countries}/>
+                <AnimatedTooltip items={countries} />
               </div>
             </motion.div>
 
@@ -259,6 +263,11 @@ export default function HomePage() {
       </main>
 
       <MarqueeSlider />
+      <Globe />
+      <Features />
+      <FeaturesSection />
+      <Blog />
+      <Contact />
     </div>
   );
 }

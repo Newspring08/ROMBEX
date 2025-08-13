@@ -16,7 +16,7 @@ export function Header() {
   const navItems = [
     {
       name: "Home",
-      link: "#home",
+      link: "/",
     },
     {
       name: "About",
@@ -28,7 +28,7 @@ export function Header() {
     },
     {
       name: "Rates",
-      link: "#rates",
+      link: "/rates",
     },
   ];
 
