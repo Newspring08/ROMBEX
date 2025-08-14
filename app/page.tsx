@@ -196,7 +196,6 @@ export default function HomePage() {
       ref={scrollContainerRef}
       className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 lg:pt-12"
     >
-
       {/* Enhanced Main Content */}
       <main className="relative overflow-hidden">
         {/* Background Elements */}
@@ -207,7 +206,7 @@ export default function HomePage() {
         <div className="relative z-10 px-4 pt-16">
           <div
             ref={heroRef}
-            className="container max-w-7xl px-4 mx-auto md:px-20 grid lg:grid-cols-2 gap-12 items-center"
+            className="container max-w-7xl px-4 mx-auto md:px-10 grid lg:grid-cols-2 gap-12 items-center"
           >
             {/* Left Column - Enhanced Text Content */}
             <div className="space-y-6 lg:space-y-8">
@@ -217,14 +216,14 @@ export default function HomePage() {
                 className="inline-flex items-center bg-gradient-to-r from-orange-50 to-blue-50 backdrop-blur-sm rounded-full px-4 py-3 border border-orange-200/50 shadow-sm"
               >
                 <span className="text-orange-500 mr-2">⭐</span>
-                <span className="text-slate-700 text-sm font-medium">
+                <span className="text-slate-700 text-xs md:text-sm font-medium">
                   Trusted by 1M+ customers worldwide
                 </span>
               </div>
 
               {/* Main Heading */}
               <div ref={titleRef}>
-                <h1 className="text-4xl xl:text-6xl font-semibold text-slate-900 leading-tight tracking-tight">
+                <h1 className="text-3xl xl:text-6xl font-medium text-slate-900 leading-tight tracking-tight">
                   Next-Gen{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                     Financial
@@ -243,13 +242,17 @@ export default function HomePage() {
               </div>
 
               {/* Enhanced Action Buttons */}
-              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
-                <button className="group px-6 py-2.5 bg-black hover:from-slate-900 inline-flex hover:to-black text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
-                  <FaDownload className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+              <div
+                ref={buttonsRef}
+                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full sm:w-auto"
+              >
+                <button className="group w-full sm:w-auto px-5 sm:px-6 py-2.5 bg-black hover:from-slate-900 hover:to-black inline-flex items-center justify-center text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
+                  <FaDownload className="mr-2 sm:mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Download App
                 </button>
-                <button className="group inline-flex px-6 py-2.5 bg-white border-2 border-slate-200 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <FaPlay className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+
+                <button className="group w-full sm:w-auto px-5 sm:px-6 py-2.5 bg-white border-2 border-slate-200 font-semibold rounded-full inline-flex items-center justify-center transition-all duration-300 transform hover:scale-105">
+                  <FaPlay className="mr-2 sm:mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
                   View Demo
                 </button>
               </div>
@@ -257,7 +260,7 @@ export default function HomePage() {
               {/* Countries Tooltip */}
               <div
                 ref={tooltipRef}
-                className="pt-4 flex flex-col sm:flex-row sm:items-center sm:gap-3"
+                className="pt-4 flex sm:flex-row sm:items-center sm:gap-3"
               >
                 <AnimatedTooltip items={countries} />
               </div>
@@ -266,10 +269,10 @@ export default function HomePage() {
             {/* Right Column - Enhanced Hero Image */}
             <div ref={imageRef} className="relative">
               {/* Background decoration */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-200/20 to-orange-200/20 rounded-3xl blur-2xl"></div>
+             
 
               {/* Main image container */}
-              <div className="relative backdrop-blur-sm rounded-2xl p-4">
+              <div className="relative backdrop-blur-sm rounded-2xl lg:p-8">
                 <Image
                   src="/hero-image2.png"
                   alt="Modern financial app interface showing account balance and features"

@@ -195,7 +195,7 @@ export default function CurrencyConverter() {
           backgroundPosition: "center",
         }}
       >
-        <CardContent className="p-0 mt-20 md:mt-32 md:max-w-5xl mx-auto rounded-lg mb-10 border shadow-lg bg-white opacity-90">
+        <CardContent className="p-0 mt-20 md:mt-32 md:max-w-5xl mx-auto lg:rounded-lg mb-10 border shadow-lg bg-white opacity-90">
           <div className="p-6 sm:p-8 space-y-2">
             <h1 className="text-2xl lg:text-4xl text-black text-center font-medium">
               Rombex Global currency conversions

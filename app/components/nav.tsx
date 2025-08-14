@@ -20,11 +20,11 @@ export function Header() {
     },
     {
       name: "About",
-      link: "#about",
+      link: "/about",
     },
     {
       name: "Services",
-      link: "#services",
+      link: "/services",
     },
     {
       name: "Rates",
