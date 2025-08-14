@@ -43,7 +43,7 @@ export function Header() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">Sign in</NavbarButton>
-            <NavbarButton variant="primary" className="lg:px-5 lg:py-2 text-white  bg-gradient-to-r from-gray-400 via-gray-900 to-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-md">
+            <NavbarButton variant="primary" className="lg:px-5 lg:py-3 text-white  bg-black hover:text-white hover:bg-black hover:scale-105 transform transition-colors duration-300 text-xs lg:text-sm font-medium rounded-full">
               Download
             </NavbarButton>
           </div>
