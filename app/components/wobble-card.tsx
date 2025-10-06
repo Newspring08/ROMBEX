@@ -31,11 +31,11 @@ export function Features() {
           </Button>
         </div>
         <img
-          src="/r-image.webp"
-          width={500}
-          height={500}
+          src="/rombex/rombex-img2.png"
+          width={300}
+          height={300}
           alt="phone image"
-          className="absolute  -right-2 lg:-right-[1%] grayscale filter -bottom-30 lg:-bottom-30 object-contain rounded-2xl"
+          className="absolute  -right-2 lg:-right-[0.5%] grayscale filter -bottom-40 lg:-bottom-50 object-contain rounded-2xl"
         />
       </WobbleCard>
       <WobbleCard containerClassName="col-span-1 min-h-[300px] space-y-4">
@@ -72,11 +72,11 @@ export function Features() {
           </Button>
         </div>
         <img
-          src="/phone-security.png"
-          width={500}
-          height={500}
+          src="/rombex/rombex-img3.png"
+          width={300}
+          height={300}
           alt="linear demo image"
-          className="absolute -right-30 md:-right-[2%] lg:-right-[10%] -bottom-65 lg:-bottom-70 object-contain rounded-2xl"
+          className="absolute -right-30 md:-right-[2%] lg:-right-[3%] -bottom-65 lg:-bottom-45 object-contain rounded-2xl"
         />
       </WobbleCard>
     </div>

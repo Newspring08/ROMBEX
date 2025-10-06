@@ -272,13 +272,13 @@ export default function HomePage() {
              
 
               {/* Main image container */}
-              <div className="relative backdrop-blur-sm rounded-2xl lg:p-8">
+              <div className="relative backdrop-blur-sm rounded-2xl lg:p-8 lg:mt-10">
                 <Image
-                  src="/hero-image2.png"
+                  src="/rombex/rombex-img1.png"
                   alt="Modern financial app interface showing account balance and features"
                   width={1000}
                   height={600}
-                  className="w-full h-[400px] lg:h-[500px] object-cover rounded-xl"
+                  className="w-full h-[500px] lg:h-[600px] object-cover rounded-xl"
                   priority
                 />
               </div>

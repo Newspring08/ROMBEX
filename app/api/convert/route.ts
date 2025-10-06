@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
 
     // Forward the request to the Rombex API
-    const response = await fetch("https://rombex.org/exchange_rate/convert", {
+    const response = await fetch("https://Rombex.com/exchange_rate/convert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -75,6 +75,16 @@ const currencies = [
   { code: "JPY", name: "Japanese Yen", flag: "https://flagcdn.com/w40/jp.png" },
   { code: "CNY", name: "Chinese Yuan", flag: "https://flagcdn.com/w40/cn.png" },
   { code: "INR", name: "Indian Rupee", flag: "https://flagcdn.com/w40/in.png" },
+  {
+    code: "USDC",
+    name: "USD Coin",
+    flag: "https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/32/color/usdc.png",
+  },
+  {
+    code: "USDT",
+    name: "Tether",
+    flag: "https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/32/color/usdt.png",
+  },
 ];
 
 const generateMockChartData = (
@@ -242,7 +252,7 @@ export default function CurrencyConverter() {
                 </div>
 
                 {/* Currency Exchange */}
-                <div className="md:col-span-2 space-y-2">
+                <div className="md:col-span-2 space-y-2 items-center">
                   <Label className="text-sm font-medium text-slate-700">
                     Currency Exchange
                   </Label>
