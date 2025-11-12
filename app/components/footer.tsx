@@ -7,26 +7,15 @@ import Image from "next/image";
 const footerLinks = {
   company: [
     { label: "About", href: "/about" },
-    { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
   Services: [
     { label: "Transfer", href: "/apply" },
-    { label: "Collections", href: "/interview-prep" },
     { label: "Payments", href: "/payments" },
-    { label: "Loans", href: "/loans" },
   ],
-  resources: [
-    { label: "Integration", href: "/integration" },
-    { label: "Integration Detail", href: "/integration-detail" },
-    { label: "Sign Up", href: "/signup" },
-  ],
-  other: [
-    { label: "Terms & conditions", href: "/terms" },
-    { label: "Privacy policy", href: "/privacy" },
-    { label: "Cookies policy", href: "/cookies" },
-  ],
+
+  other: [{ label: "Privacy policy", href: "/privacy" }],
 };
 
 const Footer = () => {
@@ -66,7 +55,7 @@ const Footer = () => {
             </div>
             <div className="flex gap-6">
               <Link
-                href="https://play.google.com/store/apps"
+                href="https://play.google.com/store/apps/details?id=com.exchange.global_exchange&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 border border-white bg-black text-white rounded-lg shadow hover:bg-gray-900 transition-all"
@@ -84,7 +73,7 @@ const Footer = () => {
                 </div>
               </Link>
               <Link
-                href="https://apple.com/store/apps"
+                href="https://apps.apple.com/ng/app/rombex-crossborder-payments/id6747320009"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 border border-white bg-white text-black rounded-lg shadow transition-all"
@@ -98,7 +87,9 @@ const Footer = () => {
                 />
                 <div className="text-left">
                   <p className="text-xs text-black">GET IT ON</p>
-                  <p className="text-xs text-black font-semibold">Apple store</p>
+                  <p className="text-xs text-black font-semibold">
+                    Apple store
+                  </p>
                 </div>
               </Link>
             </div>
@@ -141,7 +132,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="mt-5 md:mt-10"/>
+        <hr className="mt-5 md:mt-10" />
 
         {/* Copyright */}
         <div className="mt-6 pt-6 border-t border-white/10">

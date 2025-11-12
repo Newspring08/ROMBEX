@@ -194,14 +194,14 @@ export default function HomePage() {
   return (
     <div
       ref={scrollContainerRef}
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 lg:pt-12"
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 lg:pt-12"
     >
       {/* Enhanced Main Content */}
       <main className="relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/20 via-transparent to-transparent"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-200/30 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-orange-200/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-200/20 to-transparent rounded-full blur-3xl"></div>
 
         <div className="relative z-10 px-4 pt-16">
           <div
@@ -213,10 +213,10 @@ export default function HomePage() {
               {/* Trust Badge */}
               <div
                 ref={badgeRef}
-                className="inline-flex items-center bg-gradient-to-r from-orange-50 to-blue-50 backdrop-blur-sm rounded-full px-4 py-3 border border-orange-200/50 shadow-sm"
+                className="inline-flex items-center bg-gradient-to-r from-blue-50 to-blue-50 backdrop-blur-sm rounded-full px-4 py-3 border border-orange-200/50 shadow-sm"
               >
-                <span className="text-orange-500 mr-2">⭐</span>
-                <span className="text-slate-700 text-xs md:text-sm font-medium">
+                <span className="text-blue-500 mr-2">⭐</span>
+                <span className="text-blue-700 text-xs md:text-sm font-medium">
                   Trusted by 1M+ customers worldwide
                 </span>
               </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
 
               {/* Description */}
               <div ref={descriptionRef}>
-                <p className="text-gray-600 text-base lg:text-base max-w-xl leading-relaxed">
+                <p className="text-gray-600 text-base lg:text-lg max-w-xl leading-relaxed">
                   ROMBEX delivers innovative financial services with unmatched
                   transparency and security. Experience banking reimagined for
                   the digital age.
@@ -246,15 +246,12 @@ export default function HomePage() {
                 ref={buttonsRef}
                 className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full sm:w-auto"
               >
-                <button className="group w-full sm:w-auto px-5 sm:px-6 py-2.5 bg-black hover:from-slate-900 hover:to-black inline-flex items-center justify-center text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
-                  <FaDownload className="mr-2 sm:mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Download App
+                <button className="group w-full sm:w-auto px-5 sm:px-6 py-2.5 bg-black hover:from-slate-900 hover:to-black inline-flex items-center justify-center text-white font-medium rounded-full transition-all duration-300 transform hover:scale-105">
+                 
+                 Get started
                 </button>
 
-                <button className="group w-full sm:w-auto px-5 sm:px-6 py-2.5 bg-white border-2 border-slate-200 font-semibold rounded-full inline-flex items-center justify-center transition-all duration-300 transform hover:scale-105">
-                  <FaPlay className="mr-2 sm:mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  View Demo
-                </button>
+             
               </div>
 
               {/* Countries Tooltip */}
@@ -285,7 +282,7 @@ export default function HomePage() {
 
               {/* Floating elements */}
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-20 blur-xl"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full opacity-20 blur-xl"></div>
             </div>
           </div>
         </div>
